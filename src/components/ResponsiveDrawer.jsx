@@ -33,7 +33,7 @@ const iconMap = {
 };
 
 export default function PermanentDrawerLeft({ username }) {
-    const isLoggedIn = true; 
+    const isLoggedIn = true;
     return (
         <Box sx={{ display: 'flex' }}>
             <CssBaseline />
@@ -86,7 +86,6 @@ export default function PermanentDrawerLeft({ username }) {
                 component="main"
                 sx={{ flexGrow: 1, bgcolor: 'background.default', p: 3 }}
             >
-                <Toolbar />
                 <Hero />
             </Box>
         </Box>

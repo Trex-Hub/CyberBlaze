@@ -5,6 +5,8 @@ import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import RowAndColumnSpacing from './ProfileContent';
 import Button from '@mui/material/Button';
+import FAQ from './FAQ';
+
 
 const customFont = {
     fontFamily: '"Lexend Deca", sans-serif',
@@ -64,6 +66,9 @@ class Hero extends Component {
                 <Box display="flex" justifyContent="center" marginBottom={10}>
                     <RowAndColumnSpacing username={this.state.username} searchClicked={this.state.searchClicked} />
                 </Box>
+                <FAQ>
+
+                </FAQ>
             </div>
         );
     }

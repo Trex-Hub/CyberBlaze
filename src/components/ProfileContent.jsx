@@ -5,7 +5,7 @@ import Box from '@mui/material/Box';
 import Avatar from '@mui/material/Avatar';
 import Gauge from 'react-svg-gauge';
 import Paper from '@mui/material/Paper';
-import ProfileGridItem from './ProfileGridItem'; 
+import ProfileGridItem from './ProfileGridItem';
 
 const FlexContainer = styled(Box)({
     display: 'flex',
@@ -30,7 +30,7 @@ function RowAndColumnSpacing({ username, searchClicked }) {
         }
     }, [searchClicked, username]);
 
-    const gaugeValue = 0;
+    const gaugeValue = 9;
 
     const getColor = (value) => {
         const red = Math.round((1 - value / 10) * 255);
@@ -47,7 +47,7 @@ function RowAndColumnSpacing({ username, searchClicked }) {
     const textStyle = {
         fontSize: '16px',
         // fontWeight: '',
-        color: 'black', 
+        color: 'black',
     };
 
     return (

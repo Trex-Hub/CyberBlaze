@@ -6,14 +6,15 @@ const Item = styled(Paper)(({ theme, textStyle }) => ({
     backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
     ...theme.typography.body2,
     padding: theme.spacing(3),
+    fontSize: '1.2rem',
     textAlign: 'center',
     boxShadow: 'none',
-    ...textStyle, 
+    ...textStyle,
 }));
 
 const ProfileGridItem = ({ label, value, style }) => {
     return (
-        <Item textStyle={style}>
+        <Item textstyle={style}>
             {label} - {value}
         </Item>
     );
