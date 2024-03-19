@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { styled } from '@mui/material/styles';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
@@ -7,6 +7,8 @@ import Gauge from 'react-svg-gauge';
 import Paper from '@mui/material/Paper';
 import ProfileGridItem from './ProfileGridItem';
 import { Typography } from '@mui/material';
+import Swal from 'sweetalert2';
+
 
 const FlexContainer = styled(Box)({
     display: 'flex',
@@ -26,14 +28,26 @@ const Item = styled(Paper)(({ theme }) => ({
 
 function RowAndColumnSpacing({ username, searchClicked }) {
     const [updatedUsername, setUpdatedUsername] = useState(username);
-
     useEffect(() => {
         if (searchClicked) {
             setUpdatedUsername(username);
         }
     }, [searchClicked, username]);
 
-    const gaugeValue = 9;
+    const gaugeValue = 2;
+    useEffect(() => {
+        if (gaugeValue < 5) {
+            Swal.fire({
+
+                icon: 'error',
+                title: 'Low Authenticty Detected',
+                html: `You can report it to, <a href="https://mumbaipolice.gov.in/OnlineComplaints?ps_id=0" target="_blank">Mumbai Police</a>, <a href="https://cybercrime.gov.in/Accept.aspx" target="_blank"> CyberCrime Portal</a> and <a href="https://www.instagram.com/hacked/" target="_blank"> Instagram Support </a>`,
+                confirmButtonText: 'OK',
+            });
+        }
+    }, [gaugeValue]);
+
+
 
     const getColor = (value) => {
         const red = Math.round((1 - value / 10) * 255);
