@@ -6,6 +6,7 @@ import Avatar from '@mui/material/Avatar';
 import Gauge from 'react-svg-gauge';
 import Paper from '@mui/material/Paper';
 import ProfileGridItem from './ProfileGridItem';
+import { Typography } from '@mui/material';
 
 const FlexContainer = styled(Box)({
     display: 'flex',
@@ -19,6 +20,8 @@ const Item = styled(Paper)(({ theme }) => ({
     padding: theme.spacing(3),
     textAlign: 'center',
     boxShadow: 'none',
+    // border: '2px solid black',
+    background: ''
 }));
 
 function RowAndColumnSpacing({ username, searchClicked }) {
@@ -30,14 +33,20 @@ function RowAndColumnSpacing({ username, searchClicked }) {
         }
     }, [searchClicked, username]);
 
-    const gaugeValue = 9;
+    const gaugeValue = 1;
 
     const getColor = (value) => {
         const red = Math.round((1 - value / 10) * 255);
         const green = Math.round((value / 10) * 255);
-        return `rgb(${red}, ${green}, 0)`;
+        return `rgb(${red}, ${green}, 0, 0.5)`;
     };
-
+    const topLabelStyle = {
+        fontWeight: '700',
+        // color: 'red'
+    }
+    const valueLabelStyle = {
+        fontWeight: '600'
+    }
     const defaultFollowerCount = 0;
     const defaultFollowingCount = 0;
     const defaultPostCount = 0;
@@ -49,19 +58,23 @@ function RowAndColumnSpacing({ username, searchClicked }) {
         // fontWeight: '',
         color: 'black',
     };
-
+    const padVar = '1.4rem'
     return (
-        <Box sx={{ width: '90%' }}>
-            <Grid container spacing={2}>
+        <Box sx={{ width: '100%', backgroundColor: '#f8fafb', paddingLeft: padVar, paddingRight: padVar, paddingBottom: padVar, paddingTop: '2rem' }}>
+
+            <Typography variant='h4' fontWeight={'550'} marginTop={4} marginBottom={6} sx={{ color: '#342E37' }} align='center'> Account Details</Typography>
+
+            <Grid container spacing={2} backgroundColor='white'>
                 <Grid item xs={12} sm={6}>
                     <Item>
-                        <FlexContainer>
+                        <FlexContainer flexDirection='row'>
                             <Avatar
                                 alt="Avatar"
                                 src=""
-                                sx={{ width: 166, height: 157.5 }}
+                                sx={{ width: 190, height: 190, border: '3px solid black' }}
                             />
-                            <span>@{updatedUsername}</span>
+                            {/* Add Background to it */}
+                            <span style={{ fontSize: '1.6rem', backgroundColor: '#cfaffb', color: 'whitesmoke', paddingRight: '1rem', paddingLeft: '1rem', borderRadius: '3px', marginLeft: "6rem" }}> @{updatedUsername}</span>
                         </FlexContainer>
                     </Item>
                 </Grid>
@@ -74,13 +87,21 @@ function RowAndColumnSpacing({ username, searchClicked }) {
                             min={0}
                             max={10}
                             color={getColor(gaugeValue)}
-                            label='Authenticity Score'
+                            label='Authenticty'
+                            topLabelStyle={topLabelStyle}
+                            valueLabelStyle={valueLabelStyle}
                         />
                     </Item>
                 </Grid>
             </Grid>
-            <Box sx={{ width: '100%' }}>
-                <Grid container spacing={2}>
+            <Box sx={{ width: '100%', marginTop: '1.4rem' }}>
+                <Grid container spacing={3}>
+                    <Grid item xs={6}>
+                        <ProfileGridItem label="Profile Bio" value={defaultProfileBio} style={textStyle} />
+                    </Grid>
+                    <Grid item xs={6}>
+                        <ProfileGridItem label="Date of Joining" value={dateOfJoining} style={textStyle} />
+                    </Grid>
                     <Grid item xs={6}>
                         <ProfileGridItem label="Follower Count" value={defaultFollowerCount} style={textStyle} />
                     </Grid>
@@ -88,20 +109,14 @@ function RowAndColumnSpacing({ username, searchClicked }) {
                         <ProfileGridItem label="Following Count" value={defaultFollowingCount} style={textStyle} />
                     </Grid>
                     <Grid item xs={6}>
-                        <ProfileGridItem label="Private Account" value={String(false).charAt(0).toUpperCase() + String(false).slice(1)} style={textStyle} />
-                    </Grid>
-                    <Grid item xs={6}>
                         <ProfileGridItem label="Post Count" value={defaultPostCount} style={textStyle} />
                     </Grid>
                     <Grid item xs={6}>
-                        <ProfileGridItem label="Profile Bio" value={defaultProfileBio} style={textStyle} />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <ProfileGridItem label="Date of Joining" value={dateOfJoining} style={textStyle} />
+                        <ProfileGridItem label="Private Account" value={String(false).charAt(0).toUpperCase() + String(false).slice(1)} style={textStyle} />
                     </Grid>
                 </Grid>
             </Box>
-        </Box>
+        </Box >
     );
 }
 

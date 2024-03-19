@@ -6,7 +6,7 @@ import AccordionSummary from '@mui/joy/AccordionSummary';
 import { Typography } from '@mui/material';
 
 export default function FAQ() {
-    const [index, setIndex] = React.useState(0);
+    const [index, setIndex] = React.useState(null);
     return (
         <React.Fragment>
             <AccordionGroup sx={{ maxWidth: '90%', alignItems: 'left', overflow: 'clip', marginLeft: '5%', fontSize: '1.2rem' }}>
