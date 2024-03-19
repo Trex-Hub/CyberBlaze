@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
-import TextField from '@mui/material/TextField';
-import { styled } from '@mui/material/styles';
 import RowAndColumnSpacing from './ProfileContent';
 import Button from '@mui/material/Button';
 import CustomTextField from './CustomTextField'
 import FAQ from './FAQ';
+import ReportHere from './ReportHere';
 
 
 const customFont = {
@@ -72,7 +71,7 @@ class Hero extends Component {
             },
         };
         return (
-            <div style={{ backgroundColor: ' ' }}>
+            <div  style={{ backgroundColor: ' ' }}>
                 <div style={{ textAlign: 'center' }}>
 
 
@@ -111,10 +110,16 @@ class Hero extends Component {
                     </Box>
                 </div>
 
-                <Box display="flex" justifyContent="center" marginBottom={2}>
+                <Box display="flex" justifyContent="center" >
                     <RowAndColumnSpacing username={this.state.username} searchClicked={this.state.searchClicked} />
                 </Box>
+
+                <div id="Report" style={{ backgroundColor: 'white' }}>
+                    <ReportHere />
+                </div>
+
                 <div style={{ backgroundColor: 'white' }}>
+
                     <FAQ >
 
                     </FAQ>

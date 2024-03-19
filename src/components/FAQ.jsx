@@ -4,13 +4,15 @@ import Accordion from '@mui/joy/Accordion';
 import AccordionDetails from '@mui/joy/AccordionDetails';
 import AccordionSummary from '@mui/joy/AccordionSummary';
 import { Typography } from '@mui/material';
+import Box from '@mui/material/Box';
 
-export default function FAQ() {
+
+function FAQ() {
     const [index, setIndex] = React.useState(null);
     return (
-        <React.Fragment>
+        <Box id='faq'>
             <AccordionGroup sx={{ maxWidth: '90%', alignItems: 'left', overflow: 'clip', marginLeft: '5%', fontSize: '1.2rem' }}>
-                <Typography variant='h3' mt={10} mb={15} > Frequently Asked Questions </Typography>
+                <Typography variant='h4' mt={10} mb={15} textAlign={'center'} fontWeight={700} > F.A.Q </Typography>
                 {/* Add margin between each Accordion */}
                 <div style={{ marginBottom: '1.5rem' }}>
                     <Accordion
@@ -79,6 +81,8 @@ export default function FAQ() {
                     </Accordion>
                 </div>
             </AccordionGroup>
-        </React.Fragment>
+        </Box>
     );
 }
+
+export default FAQ

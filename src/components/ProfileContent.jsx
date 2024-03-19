@@ -33,7 +33,7 @@ function RowAndColumnSpacing({ username, searchClicked }) {
         }
     }, [searchClicked, username]);
 
-    const gaugeValue = 1;
+    const gaugeValue = 9;
 
     const getColor = (value) => {
         const red = Math.round((1 - value / 10) * 255);
@@ -60,14 +60,14 @@ function RowAndColumnSpacing({ username, searchClicked }) {
     };
     const padVar = '1.4rem'
     return (
-        <Box sx={{ width: '100%', backgroundColor: '#f8fafb', paddingLeft: padVar, paddingRight: padVar, paddingBottom: padVar, paddingTop: '2rem' }}>
+        <Box id='account-details' sx={{ width: '100%', backgroundColor: '#f8fafb', paddingLeft: padVar, paddingRight: padVar, paddingBottom: padVar, paddingTop: '2rem' }}>
 
-            <Typography variant='h4' fontWeight={'550'} marginTop={4} marginBottom={6} sx={{ color: '#342E37' }} align='center'> Account Details</Typography>
+            <Typography variant='h4' fontWeight={'700'} marginTop={4} marginBottom={6} sx={{ color: '#342E37', }} align='center'> Account Details</Typography>
 
             <Grid container spacing={2} backgroundColor='white'>
                 <Grid item xs={12} sm={6}>
                     <Item>
-                        <FlexContainer flexDirection='row'>
+                        <FlexContainer sx={{ display: 'flex', flexDirection: 'row' }}>
                             <Avatar
                                 alt="Avatar"
                                 src=""
