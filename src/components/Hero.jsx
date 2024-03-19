@@ -111,7 +111,7 @@ class Hero extends Component {
                     </Box>
                 </div>
 
-                <Box display="flex" justifyContent="center" marginBottom={10}>
+                <Box display="flex" justifyContent="center" marginBottom={2}>
                     <RowAndColumnSpacing username={this.state.username} searchClicked={this.state.searchClicked} />
                 </Box>
                 <div style={{ backgroundColor: 'white' }}>

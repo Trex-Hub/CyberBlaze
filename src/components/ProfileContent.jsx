@@ -94,7 +94,7 @@ function RowAndColumnSpacing({ username, searchClicked }) {
                     </Item>
                 </Grid>
             </Grid>
-            <Box sx={{ width: '100%', marginTop: '1.4rem' }}>
+            <Box sx={{ width: '100%', marginTop: '1.4rem', }}>
                 <Grid container spacing={3}>
                     <Grid item xs={6}>
                         <ProfileGridItem label="Profile Bio" value={defaultProfileBio} style={textStyle} />

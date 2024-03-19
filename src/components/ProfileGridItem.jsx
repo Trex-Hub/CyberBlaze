@@ -10,8 +10,7 @@ const Item = styled(Paper)(({ theme, textStyle }) => ({
     textAlign: 'justify',
     boxShadow: 'none',
     ...textStyle,
-    fontWeight: 'bold'
-
+    fontWeight: 'bold',
 }));
 
 const ProfileGridItem = ({ label, value, style }) => {
