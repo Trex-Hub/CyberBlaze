@@ -34,7 +34,7 @@ function RowAndColumnSpacing({ username, searchClicked }) {
         }
     }, [searchClicked, username]);
 
-    const gaugeValue = 2;
+    const gaugeValue = 9;
     useEffect(() => {
         if (gaugeValue < 5) {
             Swal.fire({
